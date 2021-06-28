@@ -5,95 +5,57 @@
 #include <iostream>
 using namespace std;
 
-// int main()
-// {
-
-//     int arr1[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-//     int arr2[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-//     int product[3][3];
-//     for (int i = 0; i < 3; i++)
-//     {
-//         for (int j = 0; j < 3; j++)
-//         {
-//             product[i][j]=0;
-//             for (int k = 0; k < 3; k++)
-//             {
-//                 product[i][j] += arr1[j][k] * arr2[k][i];
-//             }
-//         }
-//     }
-//         for (int i = 0; i < 3; i++)
-//         {
-//             for (int j = 0; j < 3; j++)
-//             {
-//                 cout << product[i][j] <<",";
-//             }
-//             cout<<endl;
-//         }
-
-// }
-class arrays
-{
-    int rowsize;
-    int colsize;
-    int mat[0][0];
-
-public:
-    arrays(int rowsize, int colsize)
-    {
-        rowsize = rowsize;
-        colsize = colsize;
-        mat[rowsize][colsize];
-    }
-    void insertElement(int element)
-    {
-        for (int i = 0; i < rowsize; i++)
-        {
-            for (int j = 0; j < colsize; j++)
-            {
-                cin >> mat[i][j];
-            }
-        }
-    }
-    void display()
-    {
-        for (int i = 0; i < rowsize; i++)
-        {
-            for (int j = 0; j < colsize; j++)
-            {
-                cout << mat[i][j]<<"  ";
-            }
-        }
-    }
-};
-
 int main()
 {
-    int rowsize, colsize, element;
-    cout << "Enter the rowsize and colsize of first matrix" << endl;
-    cin >> rowsize >> colsize;
-    arrays obj1(rowsize, colsize);
-    cout << "Enter the elements of first matrix" << endl;
-    for (int i = 0; i < rowsize; i++)
+
+    int rowsize1, colsize1, rowsize2, colsize2;
+    cout << "Enter the dimensions rowsize and colsize of your first matrix" << endl;
+    cin >> rowsize1 >> colsize1;
+    int arr1[rowsize1][colsize1];
+    cout << "Enter the dimensions rowsize and colsize of your second matrix" << endl;
+    cin >> rowsize2 >> colsize2;
+    int arr2[rowsize2][colsize2];
+    int product[rowsize1][colsize2];
+    if (colsize1 == rowsize2)
     {
-        for (int j = 0; j < colsize; j++)
+        cout << "Enter the elements of your first matrix" << endl;
+        for (int i = 0; i < rowsize1; i++)
         {
-            obj1.insertElement(element);
+            for (int j = 0; j < colsize1; j++)
+            {
+                cin >> arr1[i][j];
+            }
+        }
+        cout << "Enter the elements of your second matrix" << endl;
+        for (int i = 0; i < rowsize2; i++)
+        {
+            for (int j = 0; j < colsize2; j++)
+            {
+
+                cin >> arr2[i][j];
+            }
+        }
+        for (int i = 0; i < rowsize1; i++)
+        {
+            for (int j = 0; j < colsize2; j++)
+            {
+                product[i][j] = 0;
+                for (int k = 0; k < colsize1; k++)
+                {
+                    product[i][j] += arr1[i][k] * arr2[k][j];
+                }
+            }
+        }
+        cout << "Multiplication :" << endl;
+        for (int i = 0; i < rowsize1; i++)
+        {
+            for (int j = 0; j < colsize2; j++)
+            {
+                cout << product[i][j] << " ";
+            }
+            cout << endl;
         }
     }
-    obj1.display();
-    cout << "Enter the rowsize and colsize of second matrix" << endl;
-    cin >> rowsize >> colsize;
-    arrays obj2(rowsize, colsize);
-    cout << "Enter the elements of second matrix" << endl;
-    for (int i = 0; i < rowsize; i++)
-    {
-        for (int j = 0; j < colsize; j++)
-        {
-            obj2.insertElement(element);
-        }
-    }
-    obj2.display();
+    else
+        cout << "Enter the correct dimensions" << endl;
 }
