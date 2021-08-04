@@ -167,8 +167,8 @@ public:
             this->start = mylist.start; //then ist list head should point to 2nd list's first node so
                                         //putting 2nd list's first nodes address into it
             this->tail = mylist.tail;   //same goes with the tail
-            mylist.start=NULL;      //now second list should be empty so putting null in its head
-            mylist.tail=NULL;      // same with tail
+            mylist.start = NULL;        //now second list should be empty so putting null in its head
+            mylist.tail = NULL;         // same with tail
         }
         else //if both the lists contain elements
         {
@@ -176,27 +176,26 @@ public:
             this->tail->next = mylist.start; //putting 2nd list first nodes addres into tail of ist list pointer field
             this->tail = mylist.tail;        // also now tail should point to the last element of second list node so putting
                                              //2nd list tail address into first list tail point
-            mylist.start=NULL;//now second list should be empty so putting null in its head
+            mylist.start = NULL;             //now second list should be empty so putting null in its head
             //now new values can be inserted in second list as its previous values are merged with list one
-            mylist.tail=NULL;   // same with tail
+            mylist.tail = NULL; // same with tail
         }
     }
-    void popAll()//deleting entire list
+    void popAll() //deleting entire list
     {
-        if(this->start==NULL)
-        cout<<"can't pop as list is empty"<<endl;
-        else{
-            Node *current=start;
-            Node *store=NULL;
-            while (current!=NULL)
+        if (this->start == NULL)
+            cout << "can't pop as list is empty" << endl;
+        else
+        {
+            Node *current = start;
+            Node *store = NULL;
+            while (current != NULL)
             {
-                  store=current->next;
-                  delete current;
-                  current =store;
+                store = current->next;
+                delete current;
+                current = store;
             }
-            start=NULL;
-
-            
+            start = NULL;
         }
     }
     void display()
@@ -215,6 +214,21 @@ public:
         else
             cout << "List is empty" << endl;
     }
+
+    ~LinkedList()
+    {
+        if (this->start != NULL)
+        {
+            Node *current = NULL;
+
+            while (start != NULL)
+            {
+                current = start;
+                start = current->next;
+                delete current;
+            }
+        }
+    }
 };
 int main()
 {
@@ -231,7 +245,7 @@ int main()
     l.popAll();
     l.display();
 
-   // LinkedList l2;
+    // LinkedList l2;
     // inserting elements for list two
     // l2.insert(6);
     // l2.insert(7);
