@@ -1,3 +1,4 @@
+//Check for balanced paranthesis by using Stacks
 #include<iostream>
 using namespace std;
 #include <bits/stdc++.h>

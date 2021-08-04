@@ -8,7 +8,7 @@ int main()
     cin >> rowsize >> colsize;
     int arr[rowsize][colsize];
     int arr2[colsize][rowsize];
-    if (rowsize >= 1 &&colsize >= 1)
+    if (rowsize >= 1 && colsize >= 1)
     {
         cout << "Enter the elements of your matrix" << endl;
         for (int i = 0; i < rowsize; i++)
