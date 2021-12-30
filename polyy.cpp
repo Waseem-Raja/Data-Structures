@@ -43,7 +43,7 @@ public:
         }
     }
 
-    int Evaluate(int x)
+    int Evaluate(int x)          
     {
         int sum = 0;
         Node *current = head;

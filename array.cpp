@@ -124,7 +124,7 @@ class ArrayList
 public:
     ArrayList()
     {
-        this->arr = nullptr;
+        this->arr = NULL;
         this->len = 0;
         this->size = 0;
     }
