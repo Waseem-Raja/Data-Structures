@@ -338,23 +338,23 @@ public:
 
 int main()
 {
-    ArrayList kaiser(5);
+    ArrayList obj(5);
     for (int i = 5; i >= 1; --i)
     {
-        kaiser.add(i);
+        obj.add(i);
     }
 
-    //kaiser.remove(1);
+    //obj.remove(1);
 
-    //std::cout<<"Over FLow Elmemnt : "<< kaiser.shiftRight()<<"\n";
-    // kaiser.rotateRight();
-    kaiser.reverse();
-    for (int i = 0; i < kaiser.length(); i++)
+    //std::cout<<"Over FLow Elmemnt : "<< obj.shiftRight()<<"\n";
+    // obj.rotateRight();
+    obj.reverse();
+    for (int i = 0; i < obj.length(); i++)
     {
-        std::cout << kaiser.get(i) << "\n";
+        std::cout << obj.get(i) << "\n";
     }
 
-    //std::cout<<"Minimum is : "<<kaiser.min()<<"\n";
+    //std::cout<<"Minimum is : "<<obj.min()<<"\n";
 
     return 0;
 }
